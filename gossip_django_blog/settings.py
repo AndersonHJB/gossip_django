@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # 'blog',  # 注册 blog 应用
     'blog.apps.BlogConfig',
+    'comments.apps.CommentsConfig',  # 注册 comments 应用
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

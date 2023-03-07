@@ -2,7 +2,6 @@
 
 {% block main %}
     {% for post in post_list %}
-        {% for post in post_list %}
             <article class="post post-{{ post.pk }}">
                 <header class="entry-header">
                     <h1 class="entry-title">
@@ -18,9 +17,8 @@
                     </div>
                 </header>
                 <div class="entry-content clearfix">
-                    <p>免费、中文、零基础，完整的项目，基于最新版 Django 1.10 和 Python 3.5。带你从零开始一步步开发属于自己的博客网站，帮助你以最快的速度掌握
-                        Django
-                        开发的技巧...</p>
+                    <p>{{ post.excerpt }}...</p>
+{#                    <p>{{ post.body|truncatechars:60 }}...</p>#}
                     <div class="read-more cl-effect-14">
                         <a href="{{ post.get_absolute_url }}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
                     </div>
@@ -29,9 +27,6 @@
         {% empty %}
             <div class="np-post">暂时还没有发布文章</div>
         {% endfor %}
-    {% empty %}
-        <div class="no-post">暂时还没有发布的文章！</div>
-    {% endfor %}
     <!-- 简单分页效果
     <div class="pagination-simple">
         <a href="#">上一页</a>
